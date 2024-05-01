@@ -4,9 +4,9 @@ import animacionTexto from "./function_animarTexto.js";
 
 window.addEventListener("load", async () => {
   await animacionLoading(document.querySelector(".loader"));
-  
   // Mostrar los primeros elementos
   setTimeout(async () => {
+    document.body.style.overflow = '';
     document.querySelector(".content_nav").classList.add("content_nav--visible");
     document.querySelector(".text_div").classList.add("text_div--visible");
     document.querySelector(".titulo-span").classList.add("titulo-span--visible");
