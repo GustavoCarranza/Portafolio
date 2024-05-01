@@ -1,0 +1,99 @@
+.contenedor_carga {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .icono_loader{
+    display: inline-block;
+    text-align: center;
+    line-height: 86px;
+    text-align: center;
+    position: relative;
+    padding: 0 48px;
+    font-size: 68px;
+    color:#fff;
+    }
+    .icono_loader:before, .icono_loader:after {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      background: #fff;
+      position: absolute;
+      animation: load .7s infinite alternate ease-in-out;
+      top: 0;
+    }
+    .icono_loader:after {
+      top: auto;
+      bottom: 0;
+    }
+  @keyframes load {
+    0% {
+      left: 0;
+      height: 43px;
+      width: 15px;
+      transform: translateX(0)
+    }
+    50% {
+      height: 10px;
+      width: 40px
+    }
+    100% {
+      left: 100%;
+      height: 43px;
+      width: 15px;
+      transform: translateX(-100%)
+    }
+  }
+  
+  @keyframes bounce {
+    0% , 100%{ font-size: 0.75px }
+    50% { font-size: 1.5px }
+  }
+  @keyframes blast {
+    0% , 40% {
+      font-size: 0.5px;
+    }
+    70% {
+      opacity: 1;
+      font-size: 4px;
+    }
+     100% {
+       font-size: 6px;
+      opacity: 0;
+    }
+  }
+
+  .loader{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    clip-path: circle(150% at 100% 0);
+    transition: clip-path 2s ease-in-out ;
+}
+.loader2{
+    clip-path: circle(0% at 100% 0%);
+}
+.hidden{
+    overflow: hidden;
+}
+  
+@media screen and (max-width: 450px) {
+  .icono_loader{
+    font-size: 40px;
+    }
+    .icono_loader:before, .icono_loader:after {
+      width: 12px;
+      height: 12px;
+    }
+}

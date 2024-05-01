@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Estilos de botones*/
+.button,
+.button--modal {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid #7a7a7a;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  cursor: pointer;
+  color: black;
+  z-index: 1;
+}
+.button--modal {
+  padding: 18px 35px;
+  font-size: 25px;
+  border: 3px solid #7a7a7a;
+  color: #ffffff;
+}
+.button:before,
+.button--modal::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button:after,
+.button--modal::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #030033;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button--modal::after {
+  background-color: #fff;
+}
+.button:hover,
+.button--modal:hover {
+  color: #ffffff;
+  border: 1px solid #030033;
+}
+.button--modal:hover {
+  color: #000;
+}
+.button:hover:before,
+.button--modal:hover::before {
+  top: -35%;
+  background-color: #030033;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button--modal:hover::before {
+  background-color: #fff;
+}
+.button:hover:after,
+.button--modal:hover:after {
+  top: -45%;
+  background-color: #030033;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button--modal:hover:after {
+  background-color: #fff;
+}
+/*Fin*/
+
+/*Estilos de icono del menu*/
+.icono_menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+/*Estilos de la venata moda*/
+.ventana {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(19, 19, 19, 0.7);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.8s;
+  pointer-events: none; /* Evita que la ventana modal interfiera con los clics */
+}
+.ventana--visible {
+  opacity: 1;
+  pointer-events: auto; /* Habilita los clics en la ventana modal cuando está visible */
+}
+
+/*Estilos de los botones del nav e icono*/
+.content_nav--modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+.icono_menu--modal {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  cursor: pointer;
+  transition: tranfrom 0.2s;
+  transition: transform 0.2s;
+  transform: scale(1);
+}
+.icono_menu--modal:hover {
+  transform: scale(1.2);
+}
+
+/*Estilos para la funcion asincrona de js*/
+.content_nav {
+  opacity: 0;
+  transition: 1.2s;
+}
+.content_nav--visible {
+  opacity: 1;
+}
+.text_div {
+  opacity: 0;
+  transition: 1.2s;
+}
+.text_div--visible {
+  opacity: 1;
+  animation: MoverLogo 2s;
+  -webkit-animation: MoverLogo 2s;
+}
+@keyframes MoverLogo {
+  from {
+    margin-left: 40%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.titulo-span,
+.titulo-p {
+  opacity: 0;
+  transition: 1.2s;
+}
+.titulo-span--visible,
+.titulo-p--visible {
+  opacity: 1;
+  animation: MoverSpanP 2s;
+  -webkit-animation: MoverSpanP 2s;
+}
+@keyframes MoverSpanP {
+  from {
+    margin-top: 50%;
+  }
+  to {
+    margin-top: 2%;
+  }
+}
+/*Estilos para el efecto escritura*/
+.content-texto-escrito{
+  position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.titulo-h1 {
+  font-size: 45px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  transition: 1.2s;
+}
+.titulo-h1--visible {
+  opacity: 1;
+}
+.cursor{
+display: none;
+height: 44px;
+width: 44px;
+color: #000;
+position: absolute;
+top: 12px;
+right: -38px;
+}
+.cursor--visible{
+  display: block;
+}
+.cursor--active{
+  animation: cursor 0.8s linear 0s infinite alternate;
+}
+@keyframes cursor {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.icono-cursor{
+  width: 70%;
+  height: 70%;
+}
+/*fin*/
+
+.foto_perfil {
+  opacity: 0;
+  transition: 1.2s;
+}
+.foto_perfil--visible {
+  opacity: 1;
+}
+.iconos_redes {
+  opacity: 0;
+  transition: 1.2s;
+}
+.iconos_redes--visible {
+  opacity: 1;
+}
+
+/* Estilos Responsivos */
+@media screen and (max-width: 1100px) {
+  .titulo-h1 {
+    font-size: 45px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+  .titulo-span {
+    font-size: 25px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+  .titulo-p {
+    font-size: 15px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+}
+
+@media screen and (max-width: 970px) {
+  /* Estilo menu */
+  .content_nav {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease; /* Agregamos una transición suave */
+  }
+  .icono_menu {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.6s ease; /* Agregamos una transición suave */
+  }
+  /* Fin */
+  /* Estilo main */
+  .content_main {
+    flex-direction: column;
+  }
+  .titulos {
+    text-align: center;
+  }
+  .iconos_redes {
+    justify-content: center;
+  }
+  .foto_perfil {
+    width: 18rem;
+    height: 18rem;
+    transition: width 0.6s ease, height 0.6s ease; /* Agregamos una transición suave */
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .text_div {
+    font-size: 32px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+  .icono_menu img {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: width 0.6s ease, height 0.6s ease; /* Agregamos una transición suave */
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .text_div {
+    font-size: 25px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+  .foto_perfil {
+    width: 15rem;
+    height: 15rem;
+    transition: width 0.6s ease, height 0.6s ease; /* Agregamos una transición suave */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .text_div {
+    font-size: 20px;
+    transition: font-size 0.6s ease; /* Agregamos una transición suave */
+  }
+  .foto_perfil {
+    width: 12rem;
+    height: 12rem;
+    transition: width 0.6s ease, height 0.6s ease; /* Agregamos una transición suave */
+  }
+  .icono_menu img {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: width 0.6s ease, height 0.6s ease; /* Agregamos una transición suave */
+  }
+}

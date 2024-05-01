@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./public/img/foto.jpg" type="image/x-icon" />
+    <script defer src="./public/bundle.js"></script>
+    <link rel="stylesheet" href="public/css/tailwindOut.css" />
+    <link rel="stylesheet" href="public/css/loading.css" />
+    <title>Portafolio Web | Gustavo Carranza</title>
+</head>
+
+<body class="bg-slate-900 px-10">
+    <!--Loading-->
+    <div class="contenedor_carga loader" id="loader">
+        <span class="icono_loader">Gustavo Carranza</span>
+    </div>
+    <!--Fin-->
+
+    <div class="bg-slate-100 min-h-screen">
+        <!--header-->
+        <header class="flex justify-around py-5">
+            <h1 class="text-5xl font-bold text-zinc-400 tracking-widest text_div">DivSystemsWeb</h1>
+            <nav class="flex gap-7 content_nav">
+                <a href="#" class="button">Home</a>
+                <a href="#" class="button">Experiencia</a>
+                <a href="#" class="button">Proyectos</a>
+                <a href="#" class="button">Skills</a>
+            </nav>
+            <button class="icono_menu">
+                <img src="./public/svg/menu.svg" class="h-10 w-10" alt="icono menu" id="icono_menu">
+            </button>
+        </header>
+        <!--Fin-->
+
+        <!--Main-->
+        <main class="p-5 my-10">
+            <div class="flex items-center justify-around content_main">
+                <div class="flex flex-col">
+
+                    <div class="content-texto-escrito">
+                        <div class="text-6xl my-4 titulos titulo-h1 titulo--uno" data-texto="Gustavo Carranza Rivera">
+                            <div class="cursor" id="cursor">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="icono-cursor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.165 4.165 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.49 3.49 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.165 4.165 0 0 1-2.06-.566A4.561 4.561 0 0 1 8 13.65a4.561 4.561 0 0 1-.44.285 4.165 4.165 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.49 3.49 0 0 0-.436-.294A3.166 3.166 0 0 0 5.5 2.5.5.5 0 0 1 5 2zm3.352 1.355zm-.704 9.29z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="text-4xl my-3 font-semibold titulos titulo-span">Web Developer en proceso</span>
+                    <p class="text-2xl my-3 text-justify font-medium titulos titulo-p">¡Hola!, bienvenido a mi
+                        portafolio web donde
+                        conoceras <br> gran parte de mi carrera como programador hasta el <br> momento...</p>
+                    <div class="flex gap-5 iconos_redes">
+                        <a href="" class="">
+                            <img src="./public/svg/github.svg" class="h-12 w-12" alt="">
+                        </a>
+                        <a href="">
+                            <img src="./public/svg/linkedin.svg" class="h-12 w-12" alt="">
+                        </a>
+                        <a href="">
+                            <img src="./public/svg/outlook.svg" class="h-12 w-12" alt="">
+                        </a>
+                    </div>
+                </div>
+                <img src="./public/img/foto.jpg" alt="" class="w-96 h-96 rounded-full foto_perfil">
+            </div>
+        </main>
+        <!--Fin-->
+
+        <!--Vetanna modal una vez aplicada el responsive-->
+        <div id="ventana" class="ventana">
+            <div class="modal">
+                <nav class="content_nav--modal">
+                    <a href="#" class="button--modal">Home</a>
+                    <a href="#" class="button--modal">Experiencia</a>
+                    <a href="#" class="button--modal">Proyectos</a>
+                    <a href="#" class="button--modal">Skills</a>
+                </nav>
+                <button class="icono_menu--modal" id="close-btn">
+                    <img src="./public/svg/cerrar.svg" class="h-10 w-10" alt="icono menu" id="icono_menu">
+                </button>
+            </div>
+        </div>
+        <!--in-->
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
