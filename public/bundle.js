@@ -33,7 +33,7 @@ const animacionTexto = (texto) => {
             const letra = document.createElement('span');
             letra.append(texto.dataset.texto[i]);
             texto.append(letra);
-        }, 180 * i); 
+        }, 150 * i); 
     }
     setTimeout(() => {
         const cursorAnimado = [...texto.closest('.content-texto-escrito').querySelectorAll('.cursor')];
@@ -41,7 +41,7 @@ const animacionTexto = (texto) => {
         if(indexCursorActual === 0){
             cursor.classList.add('cursor--active');
         }
-    }, numeroLetras * 180);
+    }, numeroLetras * 150);
     return new Promise((resolve) => setTimeout(resolve, numeroLetras * 30));
 };
 
